@@ -10,7 +10,7 @@ public class TelephoneDirectory1 {
         System.out.println(emp);
         System.out.println(emp.get("Swapna"));
         //System.out.println(emp.get(1234567890));
-
+/*
         int searchValue = 1234567890;
         String foundKey = null;
         for (HashMap.Entry<String, Integer> entry : HashMap.entrySet()) {
@@ -25,6 +25,16 @@ public class TelephoneDirectory1 {
             System.out.println("Key found: " + foundKey);
         } else {
             System.out.println("Key not found for the specified value.");
+        }
+*/
+        // Print keys
+        for (String i : emp.keySet()) {
+            System.out.println(i);
+        }
+
+        //Print Values
+        for (int j : emp.values()) {
+            System.out.println(j);
         }
 
     }

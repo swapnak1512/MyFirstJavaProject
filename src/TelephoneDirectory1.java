@@ -10,8 +10,8 @@ public class TelephoneDirectory1 {
         System.out.println(emp);
         System.out.println(emp.get("Swapna"));
         //System.out.println(emp.get(1234567890));
-/*
-        int searchValue = 1234567890;
+
+     /*   int searchValue = 1234567890;
         String foundKey = null;
         for (HashMap.Entry<String, Integer> entry : HashMap.entrySet()) {
             if (entry.getValue() == searchValue) {

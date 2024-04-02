@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class TelDir {
     HashMap<String, String> emp = new HashMap<>();
@@ -26,8 +27,15 @@ public class TelDir {
     }
 
     public String getName(String phoneNum) {
-        return emp.get(phoneNum);
-    }
+        String foundKey = null;
+        for (Map.Entry<String, String> entry : emp.entrySet()) {
+            if (Objects.equals(entry.getValue(), phoneNum)) {
+                foundKey = entry.getKey();
+                break; // Stop searching once the key is found
+            }
+        }
+         return foundKey;
+   }
 
     public void getAllContacts() {
         System.out.println("********************");

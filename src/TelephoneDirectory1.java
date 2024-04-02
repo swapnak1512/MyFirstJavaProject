@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class TelephoneDirectory1 {
     public static void main(String args[])
@@ -11,9 +12,9 @@ public class TelephoneDirectory1 {
         System.out.println(emp.get("Swapna"));
         //System.out.println(emp.get(1234567890));
 
-     /*   int searchValue = 1234567890;
+       int searchValue = 1234567890;
         String foundKey = null;
-        for (HashMap.Entry<String, Integer> entry : HashMap.entrySet()) {
+         for (Map.Entry<String, Integer> entry : emp.entrySet()) {
             if (entry.getValue() == searchValue) {
                 foundKey = entry.getKey();
                 break; // Stop searching once the key is found
@@ -26,7 +27,7 @@ public class TelephoneDirectory1 {
         } else {
             System.out.println("Key not found for the specified value.");
         }
-*/
+
         // Print keys
         for (String i : emp.keySet()) {
             System.out.println(i);

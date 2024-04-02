@@ -1,48 +1,43 @@
 import java.util.HashMap;
-import java.util.Scanner;
+import java.util.Map;
 
 public class TelDir {
-    HashMap<String,Integer> emp = new HashMap<>();
+    HashMap<String, String> emp = new HashMap<>();
 
 
-    public void AddContacts()
-    {
-        System.out.println("******************");
-        Scanner scn = new Scanner(System.in);
-        System.out.println("Enter an Name & a Phone Number");
-        String name = scn.nextLine();
-        int phoneNum = scn.nextInt();
-        emp.put(name,phoneNum);
-        System.out.println("Phone Number for:"+name+" is "+emp.get(name));
-        System.out.println("******************");
-        System.out.println("Size of HashMap:"+emp.size());
-    }
-    public void getTelephoneNumber()
-    {
-        System.out.println("******************");
-        Scanner scn = new Scanner(System.in);
-        System.out.println("Enter a Name to find a Phone Number");
-        String name = scn.nextLine();
-        System.out.println("Phone Number for:"+name +" is "+emp.get(name));
-        System.out.println("******************");
-        System.out.println("Size of HashMap:"+emp.size());
+    public void AddContacts(String name, String phoneNum) {
+        try {
+            if (name != null && phoneNum != null) {
+                emp.put(name, phoneNum);
+                System.out.println("Contact " + name + " is successfully added to Phone Directory");
+            }
+        } catch (Exception e) {
+            System.out.println(" **** Exception Occurred, either Name or PhoneNum are null ");
+            e.printStackTrace();
+            System.out.println("Contact has not been added to Phone Directory, please try again!!");
+        }
 
+        System.out.println("Total no of contacts in the Telephone Directory : " + emp.size());
     }
 
-    public void getName()
-    {
-        System.out.println("******************");
-        Scanner scn = new Scanner(System.in);
-        System.out.println("Enter a phone number to find a Name");
-        int phoneNum = scn.nextInt();
-        System.out.println("Name for:"+phoneNum +" is "+ emp.get(phoneNum));
+
+    public String getTelephoneNumber(String name) {
+        return emp.get(name);
     }
-    public void getAllContacts()
-    {
+
+    public String getName(String phoneNum) {
+        return emp.get(phoneNum);
+    }
+
+    public void getAllContacts() {
         System.out.println("********************");
-        System.out.println("size of hashmap"+emp.size());
-        for (String i : emp.keySet()) {
-            System.out.println(i);
+        System.out.println("Total no of contacts in the Telephone Directory : " + emp.size());
+        System.out.println("Name   :   Telephone Number");
+        for (Map.Entry<String, String> entry : emp.entrySet()) {
+            System.out.println(entry.getKey() + "   :    " + entry.getValue());
         }
     }
 }
+
+
+

@@ -26,6 +26,7 @@ public class TelDir {
         return emp.get(name);
     }
 
+    //updated the code for getName
     public String getName(String phoneNum) {
         String foundKey = null;
         for (Map.Entry<String, String> entry : emp.entrySet()) {

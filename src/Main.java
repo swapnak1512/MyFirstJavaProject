@@ -5,7 +5,7 @@ import static java.lang.System.exit;
 public class Main {
     public static void main(String[] args) {
         TelDir td = new TelDir(); // Moved object creation out of while as it's keep creating new object everytime you read data
-        String name, phoneNum;
+        String name, phoneNum=" ";
         System.out.print("\n ********** Hello and welcome to my Telephone Directory ************ \n");
         while (true) {
             Scanner scan = new Scanner(System.in);
@@ -15,7 +15,8 @@ public class Main {
                             "2- Get Telephone number based on name\n" +
                             "3- Get Name of the contact based on Telephone number\n" +
                             "4- Get All Contacts\n" +
-                            "5- Exit");
+                            "5- Search the Contacts in the Telephone directory \n" +
+                            "6- Exit");
             int selectedOption = scan.nextInt();
 
             switch (selectedOption) {
@@ -23,8 +24,20 @@ public class Main {
                     System.out.println(" ***** You have chosen option 1 - Add Contacts to Telephone Directory ****");
                     System.out.println("Enter Name:");
                     name = scan.next();
-                    System.out.println("Enter PhoneNumber:");
-                    phoneNum = scan.next();
+
+                    boolean isValid = false;
+
+                    while (!isValid) {
+                        System.out.println("Enter 10 digit PhoneNumber:");
+                        phoneNum = scan.next();
+
+                        if (td.isValidPhoneNumber(phoneNum)) {
+                            System.out.println("Valid phone number: " + phoneNum);
+                            isValid = true;
+                        } else {
+                            System.out.println("Invalid phone number. Please enter a 10-digit number.");
+                        }
+                    }
                     td.AddContacts(name, phoneNum);
                     break;
                 case 2:
@@ -52,7 +65,13 @@ public class Main {
                     td.getAllContacts();
                     break;
                 case 5:
-                    System.out.println("5- Exit");
+                    System.out.println("5-Search the contacts in telephone directory");
+                    System.out.print("Enter first 1 or 2 or 3 characters: ");
+                    String input = scan.next();
+                    td.searchContacts(input);
+                    break;
+                case 6:
+                    System.out.println("6- Exit");
                     System.exit(0);
                     break;
                 default:

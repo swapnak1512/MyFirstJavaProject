@@ -60,5 +60,32 @@ public class Main {
         } else {
             System.out.println("The string \"" + inputToCheckPalindrome + "\" is not a palindrome.");
         }
+
+        //factorial of a number
+        System.out.print("Enter the number to find factorial: ");
+        int num = scan.nextInt();
+        int factResult = jp.factorial(num);
+        System.out.println("factorial of "+num+" is "+factResult);
+
+        //fibonacci series
+        System.out.println("Enter any number of terms for fibonacci series");
+        int numTerms = scan.nextInt();
+        System.out.println("Fibonacci series till "+numTerms+" are");
+        jp.printFibonacciSeries(numTerms);
+
+        //prime number
+        System.out.println("Enter any number to check if its prime or not");
+        int numPrime = scan.nextInt();
+        if (jp.isPrime(numPrime)) {
+            System.out.println("The number \"" + numPrime + "\" is a prime.");
+        } else {
+            System.out.println("The number \"" + numPrime + "\" is not a prime.");
+        }
+
+
     }
+
+
+
+
 }

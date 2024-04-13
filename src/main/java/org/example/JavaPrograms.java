@@ -48,9 +48,41 @@ public class JavaPrograms {
 
         return true; // All characters matched, so it's a palindrome
     }
+public static int factorial(int number)
+    {
+        int fact = 1;
+        for(int i=1;i<=number;i++)
+        {
+            fact = fact*i;
+        }
 
+        return fact;
+    }
 
+    public static void printFibonacciSeries(int num)
+    {
+        int firstTerm = 0;
+        int secondTerm = 1;
+        for(int i=0;i<num;i++)
+        {
+            System.out.print(firstTerm+" ");
+            int nextTerm = firstTerm + secondTerm;
+            firstTerm = secondTerm;
+            secondTerm = nextTerm;
+        }
+    }
 
+    public static boolean isPrime(int num)
+    {
+
+        for(int i=2;i<num;i++)
+        {
+            if(num%i==0) {
+                return false;
+            }
+        }
+     return true;
+    }
 }
 
 

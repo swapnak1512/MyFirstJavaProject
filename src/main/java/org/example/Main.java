@@ -77,15 +77,51 @@ public class Main {
         System.out.println("Enter any number to check if its prime or not");
         int numPrime = scan.nextInt();
         if (jp.isPrime(numPrime)) {
-            System.out.println("The number \"" + numPrime + "\" is a prime.");
+            System.out.println("The number " + numPrime + " is a prime.");
         } else {
-            System.out.println("The number \"" + numPrime + "\" is not a prime.");
+            System.out.println("The number " + numPrime + " is not a prime.");
         }
+
+        //Anagram
+        System.out.println("Enter 2 strings to check whether they are anagrams to each other");
+        System.out.println("Enter 1st String");
+        String str1 = scan.next();
+        System.out.println("Enter 2nd String");
+        String str2 = scan.next();
+        if(jp.isAnagram(str1,str2))
+            System.out.println("Both the strings "+str1+" and "+str2+" are Anagrams to each other");
+        else
+            System.out.println("Both the strings "+str1+" and "+str2+ " are not anagrams");
+
+        //Array sorting - Bubble sort
+        System.out.print("Enter the size of the array: ");
+        int size1 = scan.nextInt();
+
+        int[] nums = new int[size1];
+        System.out.println("Enter the elements of the array:");
+
+        for (int i = 0; i < size1; i++) {
+            nums[i] = scan.nextInt();
+        }
+
+        System.out.println("Original Array:");
+        for(int j=0;j<size1;j++)
+            System.out.print(nums[j]+" ");
+
+        jp.bubbleSort(nums);
+        System.out.println();
+        System.out.println("sorted array by bubble sort:");
+        for(int k=0;k<size1;k++)
+            System.out.print(nums[k]+" ");
+
+        //Array sorting - Merge sort
+        System.out.println();
+        System.out.println("sorted array by merge sort:");
+        jp.mergeSort(nums,0,nums.length-1);
+        for(int l=0;l<size1;l++)
+            System.out.print(nums[l]+ " ");
+
 
 
     }
-
-
-
-
 }

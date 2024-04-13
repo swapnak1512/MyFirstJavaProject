@@ -1,6 +1,7 @@
 package org.example;
 
 
+import java.util.Arrays;
 
 public class JavaPrograms {
 
@@ -83,6 +84,105 @@ public static int factorial(int number)
         }
      return true;
     }
+
+    public static boolean isAnagram(String str1, String str2)
+    {
+        str1 = str1.replaceAll("[^a-zA-Z]", "").toLowerCase();
+        str2 = str2.replaceAll("[^a-zA-Z]","").toLowerCase();
+        char[] charArray1 = str1.toCharArray();
+        char[] charArray2 = str2.toCharArray();
+        Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
+        return Arrays.equals(charArray1,charArray2);
+    }
+
+    public static void bubbleSort(int[] arr)
+    {
+       int n = arr.length;
+       boolean swapped;
+       for(int i=0;i<n;i++)
+       {
+           swapped = false;
+           for(int j=0;j<n-1;j++)
+           {
+               if(arr[j] > arr[j+1])
+               {
+                   int temp = arr[j];
+                   arr[j] = arr[j+1];
+                   arr[j+1] = temp;
+                   swapped = true;
+               }
+           }
+           if(!swapped)
+           {
+               break;
+           }
+       }
+    }
+     public static void mergeSort(int[] arr, int left, int right)
+     {
+         if(left < right)
+         {
+             //find the middle point to divide array into 2 halves
+             int mid = left + (right-left) / 2;
+             // Recursive calls to mergeSort for each half
+             mergeSort(arr, left, mid);
+             mergeSort(arr, mid + 1, right);
+
+             // Merge the two sorted halves
+             merge(arr, left, mid, right);
+         }
+
+     }
+
+    public static void merge(int[] arr, int left, int mid, int right) {
+        // Sizes of the two subarrays to be merged
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+
+        // Create temporary arrays to hold the elements of the two subarrays
+        int[] leftArray = new int[n1];
+        int[] rightArray = new int[n2];
+
+        // Copy data to temporary arrays
+        for (int i = 0; i < n1; i++) {
+            leftArray[i] = arr[left + i];
+        }
+        for (int j = 0; j < n2; j++) {
+            rightArray[j] = arr[mid + 1 + j];
+        }
+
+        // Merge the two sorted arrays back into arr
+        int i = 0, j = 0;
+        int k = left; // Initial index of merged subarray
+
+        while (i < n1 && j < n2) {
+            if (leftArray[i] <= rightArray[j]) {
+                arr[k] = leftArray[i];
+                i++;
+            } else {
+                arr[k] = rightArray[j];
+                j++;
+            }
+            k++;
+        }
+
+        // Copy remaining elements of leftArray, if any
+        while (i < n1) {
+            arr[k] = leftArray[i];
+            i++;
+            k++;
+        }
+
+        // Copy remaining elements of rightArray, if any
+        while (j < n2) {
+            arr[k] = rightArray[j];
+            j++;
+            k++;
+        }
+    }
+
+
 }
 
 

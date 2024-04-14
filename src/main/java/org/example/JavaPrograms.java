@@ -2,12 +2,13 @@ package org.example;
 
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class JavaPrograms {
 
     public static String reverseString(String input)
     {
-        System.out.println("you have entered"+input);
         StringBuilder reversed = new StringBuilder();
         for(int i = input.length()-1;i>=0;i--)
         {
@@ -182,6 +183,43 @@ public static int factorial(int number)
         }
     }
 
+    public static int binarySearch(int[] arr,int target)
+    {
+        int low = 0;
+        int high = arr.length-1;
+        while(low<high)
+        {
+            int mid = low + (high-low)/2;
+            if(arr[mid] == target)
+            {
+                return mid;
+            } else if(arr[mid] < target)
+            {
+                low = mid+1;
+            } else
+            {
+                high = mid-1;
+            }
+
+        }
+        return -1;
+    }
+
+
+    public static void findDuplicates(int[] arr)
+    {
+        Set<Integer> uniqueElements = new HashSet<>();
+        Set<Integer> duplicateElements = new HashSet<>();
+
+        for (int num : arr) {
+            if (!uniqueElements.add(num)) {
+                // If the element is already present in uniqueElements set, it's a duplicate
+                duplicateElements.add(num);
+            }
+        }
+        System.out.println("Duplicate elements in the array: " + duplicateElements);
+        System.out.println("Unique elements in the array:"+uniqueElements);
+    }
 
 }
 

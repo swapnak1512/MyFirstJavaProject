@@ -24,7 +24,7 @@ public class Main {
         else {
             System.out.println("Repeated characters in alphabetical order: " + repeatedChars);
         }
-
+        System.out.println("*************************************");
         //to reverse of the given string
         System.out.println("Enter Any string to get the reverse of string");
         String inputToReverse = scan.nextLine();
@@ -34,6 +34,7 @@ public class Main {
         System.out.println("reversed string:"+reversedString);
 
         //to find the largest number in array
+        System.out.println("*************************************");
         System.out.print("Enter the size of the array: ");
         int size = scan.nextInt();
 
@@ -51,6 +52,7 @@ public class Main {
         System.out.println("The largest number in the array is: " + largest);
 
         //to check whether string is palindrome or not
+        System.out.println("*************************************");
         System.out.print("Enter a string to check for palindrome: ");
         String inputToCheckPalindrome = scan.next();
 
@@ -62,18 +64,22 @@ public class Main {
         }
 
         //factorial of a number
+        System.out.println("*************************************");
         System.out.print("Enter the number to find factorial: ");
         int num = scan.nextInt();
         int factResult = jp.factorial(num);
         System.out.println("factorial of "+num+" is "+factResult);
 
         //fibonacci series
+        System.out.println("*************************************");
         System.out.println("Enter any number of terms for fibonacci series");
         int numTerms = scan.nextInt();
         System.out.println("Fibonacci series till "+numTerms+" are");
         jp.printFibonacciSeries(numTerms);
 
         //prime number
+        System.out.println();
+        System.out.println("*************************************");
         System.out.println("Enter any number to check if its prime or not");
         int numPrime = scan.nextInt();
         if (jp.isPrime(numPrime)) {
@@ -83,17 +89,19 @@ public class Main {
         }
 
         //Anagram
+        System.out.println("*************************************");
         System.out.println("Enter 2 strings to check whether they are anagrams to each other");
         System.out.println("Enter 1st String");
         String str1 = scan.next();
         System.out.println("Enter 2nd String");
         String str2 = scan.next();
         if(jp.isAnagram(str1,str2))
-            System.out.println("Both the strings "+str1+" and "+str2+" are Anagrams to each other");
+            System.out.println("Both the strings \" "+str1+" \"and\" "+str2+" \"are Anagrams to each other");
         else
-            System.out.println("Both the strings "+str1+" and "+str2+ " are not anagrams");
+            System.out.println("Both the strings \""+str1+"\" and \""+str2+ " \"are not anagrams");
 
         //Array sorting - Bubble sort
+        System.out.println("*************************************");
         System.out.print("Enter the size of the array: ");
         int size1 = scan.nextInt();
 
@@ -121,7 +129,23 @@ public class Main {
         for(int l=0;l<size1;l++)
             System.out.print(nums[l]+ " ");
 
+        //Binary search
+        System.out.println();
+        System.out.println("*************************************");
+        System.out.println("Enter number you want to search");
+        int target = scan.nextInt();
+        int index = jp.binarySearch(nums,target);
+        if(index != -1)
+        {
+            System.out.println("Target "+target+" found at index "+index);
+        }
+        else
+        {
+            System.out.println("Target "+target+" not found in array");
+        }
 
+        //find and print duplicated in an array
+        jp.findDuplicates(nums);
 
     }
 }

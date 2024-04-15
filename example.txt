@@ -1,0 +1,3 @@
+Hello, this is an example1 of file I/O in Java.
+We are writing to a file named example.txt.
+appended

@@ -1,5 +1,6 @@
 package org.example;
 
+import java.lang.classfile.components.ClassPrinter;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -102,7 +103,7 @@ public class Main {
 
         //Array sorting - Bubble sort
         System.out.println("*************************************");
-        System.out.print("Enter the size of the array: ");
+        System.out.print("Enter the size of the array for sorting: ");
         int size1 = scan.nextInt();
 
         int[] nums = new int[size1];
@@ -146,6 +147,52 @@ public class Main {
 
         //find and print duplicated in an array
         jp.findDuplicates(nums);
+
+        //matrix addition , matrix multiplication and matrix transpose
+        System.out.println("***************************");
+        System.out.println("Matrix Operations");
+        int[][] matrix1={ {0, 0, 0}, {0, 0, 0} };
+        int[][] matrix2={ {0, 0, 0}, {0, 0, 0} };
+
+        System.out.println("Enter the size of the matrix array: Enter number of rows");
+        int rows = scan.nextInt();
+        System.out.println("Enter the size of the matrix array: Enter number of columns");
+        int cols = scan.nextInt();
+        System.out.println("Enter the elements of matrix array");
+        for (int i = 0; i < rows; i++)
+        {
+            {
+                for (int j = 0; j < cols; j++)
+                    matrix1[i][j] = scan.nextInt();
+            }
+        }
+
+       System.out.println("Enter the elements of matrix 2 array");
+        for (int i = 0; i < rows; i++)
+        {
+            {
+                for (int j = 0; j < cols; j++)
+                    matrix2[i][j] = scan.nextInt();
+            }
+        }
+        System.out.println("Elements of the matrix 1 array are:");
+        jp.printMatrix(matrix1);
+        System.out.println("Elements of the matrix 2 array are:");
+
+        jp.printMatrix(matrix2);
+        int[][] sumMatrix = jp.addMatrices(matrix1, matrix2);
+        System.out.println("Matrix Addition:");
+        jp.printMatrix(sumMatrix);
+
+        // Matrix multiplication
+        int[][] productMatrix = jp.multiplyMatrices(matrix1, matrix2);
+        System.out.println("\nMatrix Multiplication:");
+        jp.printMatrix(productMatrix);
+
+        // Matrix transpose
+        int[][] transposedMatrix = jp.transposeMatrix(matrix1);
+        System.out.println("\nMatrix Transpose:");
+        jp.printMatrix(transposedMatrix);
 
     }
 }

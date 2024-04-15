@@ -1,7 +1,7 @@
 package org.example;
 
 import java.util.Scanner;
-import java.util.Set;
+
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -47,7 +47,7 @@ public class Main {
 
         System.out.println("you have entered numbers");
         for(int j=0;j<size;j++)
-        System.out.println(numbers[j]);
+            System.out.println(numbers[j]);
         int largest = jp.findLargestNumber(numbers);
         System.out.println("The largest number in the array is: " + largest);
 

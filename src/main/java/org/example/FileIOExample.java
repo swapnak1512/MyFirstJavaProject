@@ -11,7 +11,6 @@ public class FileIOExample {
             writer.println("Hello, this is an example of file I/O in Java.");
             writer.println("We are writing to a file named example.txt.");
             writer.println("This file will be created if it doesn't exist.");
-            writer.append("appended");
         } catch (IOException e) {
             System.err.println("Error writing to the file: " + e.getMessage());
         }
